@@ -1,7 +1,7 @@
 import React from "react";
 
 const baseStyles =
-  "inline-flex items-center justify-center rounded-md font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2";
+  "inline-flex items-center cursor-pointer justify-center rounded-md font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2";
 
 const variants = {
   primary:

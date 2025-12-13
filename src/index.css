@@ -11,3 +11,9 @@
 .batchList div:nth-child(odd) {
   @apply bg-slate-300 hover:bg-slate-400;
 }
+.table-bdy tr td {
+  @apply p-5;
+}
+.table-bdy tr:nth-child(odd) {
+  @apply bg-slate-300 hover:bg-slate-400;
+}

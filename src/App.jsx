@@ -4,6 +4,8 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Registation from "./pages/Registation"
+import AddStudents from "./pages/AddStudents";
+import Attendence from "./pages/Attendence";
 
 const App = () => {
   return <div>
@@ -13,6 +15,8 @@ const App = () => {
         <Route path="/registation" element={<Registation/>}/>
         <Route path="/" element={<Layout/>}>
         <Route index element={<Home/>}/>
+        <Route path="/addstudents" element={<AddStudents/>}/>
+        <Route path="/attendence" element={<Attendence/>}/>
         </Route>
       </Routes>
    </BrowserRouter>
