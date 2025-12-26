@@ -7,8 +7,7 @@ const Input = ({label, type = "text", className}) => {
       <input
         type={type}
         id="input"
-        placeholder
-        className={`${className} peer w-full pl-6 pr-4 pt-6 pb-2 text-sm text-gray-800 bg-white border border-gray-200 rounded-lg shadow-md focus:border-transparent focus:ring-2 focus:ring-indigo-300 focus:outline-none transition-all duration-300 delay-200 placeholder-transparent`}
+        placeholder className={`${className} peer w-full pl-6 pr-4 pt-6 pb-2 text-sm text-gray-800 bg-white border border-gray-200 rounded-lg shadow-md focus:border-transparent focus:ring-2 focus:ring-indigo-300 focus:outline-none transition-all duration-300 delay-200 placeholder-transparent`}
       />
       <label
         htmlFor="input"

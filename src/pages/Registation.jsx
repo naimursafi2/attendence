@@ -146,8 +146,7 @@ const Registation = () => {
               type="text"
               className="border rounded-lg px-3 py-2 mt-1  text-sm w-full bg-gray-700 text-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500"
             />
-            {errors.email && (
-              <p className="bg-red-600 px-2 rounded text-white mt-1 w-fit">
+            {errors.email && (<p className="bg-red-600 px-2 rounded text-white mt-1 w-fit">
                 {errors.email}
               </p>
             )}
@@ -183,14 +182,14 @@ const Registation = () => {
               </button>
             </div>
           </div>
-          <div className="mt-5">
+          <div className="mt-1">
             <button
               onClick={handelSignUp}
               type="submit"
               className={`py-2 ${loading ? "bg-blue-600/15" :"bg-blue-600 hover:bg-blue-700"} px-4 cursor-pointer  focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg`}
           disabled={loading}
           >
-              Sign Up
+            Sign Up
             </button>
           </div>
           <div className="flex items-center justify-between mt-4">
