@@ -10,7 +10,7 @@ import {
 import { getDatabase, ref, set } from "firebase/database";
 import { toast, ToastContainer } from "react-toastify";
 const Registation = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [registerData, setRegisterData] = useState({
     fullName: "",
     email: "",
@@ -21,18 +21,18 @@ const Registation = () => {
     email: "",
     password: "",
   });
-  const[loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const auth = getAuth();
   const db = getDatabase();
   const handelSignUp = () => {
-    setLoading(true)
+    setLoading(true);
     setErrors({
       fullName: "",
       email: "",
       password: "",
     });
     if (!registerData.fullName) {
-      setLoading(false)
+      setLoading(false);
       return setErrors((prev) => ({
         ...prev,
         fullName: "Enter your fullname",
@@ -57,17 +57,19 @@ const Registation = () => {
               email: response.user.email,
             }).then(() => {
               sendEmailVerification(auth.currentUser).then(() => {
-                toast.success("Registration Successfully, please verify your email")
-               setTimeout(() => {
-                 navigate("/login")
-               }, 3000);
+                toast.success(
+                  "Registration Successfully, please verify your email"
+                );
+                setTimeout(() => {
+                  navigate("/login");
+                }, 3000);
               });
             });
           })
           .catch((error) => {});
       })
       .catch((error) => {
-        setLoading(false)
+        setLoading(false);
         const errorCode = error.code;
         if (errorCode == "auth/invalid-email") {
           return setErrors((prev) => ({
@@ -94,9 +96,8 @@ const Registation = () => {
             password: "Enter e week password at least 6 character",
           }));
         }
-      }).finally(()=>{
-       
       })
+      .finally(() => {});
   };
   // console.log(errors);
 
@@ -146,7 +147,8 @@ const Registation = () => {
               type="text"
               className="border rounded-lg px-3 py-2 mt-1  text-sm w-full bg-gray-700 text-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500"
             />
-            {errors.email && (<p className="bg-red-600 px-2 rounded text-white mt-1 w-fit">
+            {errors.email && (
+              <p className="bg-red-600 px-2 rounded text-white mt-1 w-fit">
                 {errors.email}
               </p>
             )}
@@ -186,10 +188,12 @@ const Registation = () => {
             <button
               onClick={handelSignUp}
               type="submit"
-              className={`py-2 ${loading ? "bg-blue-600/15" :"bg-blue-600 hover:bg-blue-700"} px-4 cursor-pointer  focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg`}
-          disabled={loading}
-          >
-            Sign Up
+              className={`py-2 ${
+                loading ? "bg-blue-600/15" : "bg-blue-600 hover:bg-blue-700"
+              } px-4 cursor-pointer  focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg`}
+              disabled={loading}
+            >
+              Sign Up
             </button>
           </div>
           <div className="flex items-center justify-between mt-4">
